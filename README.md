@@ -78,7 +78,8 @@ FastAPI-WebSocket-ChatRoom/
 
 ````
 
----
+
+
 
 ##🔍 File-by-File Explanation
 
@@ -94,7 +95,10 @@ FastAPI-WebSocket-ChatRoom/
 
 **➡ Purpose:** Application entry point
 
+
 ---
+
+
 
 ### 🧩 `database.py`
 
@@ -105,11 +109,15 @@ FastAPI-WebSocket-ChatRoom/
   engine = create_engine("sqlite:///./chat.db", connect_args={"check_same_thread": False})
   ```
 
-**➡ Purpose:** Database connection configuration (SQLite/MySQL/PostgreSQL)
+** Purpose:** Database connection configuration (SQLite/MySQL/PostgreSQL)
 
 ---
 
+
+
 ### 🧩 `models/chat.py`
+
+
 
 Defines database tables:
 
@@ -145,6 +153,8 @@ def create_message(db, username, content, room)
 **➡ Purpose:** Separates DB logic from routing logic
 
 ---
+
+
 
 ### 🧩 `routes/chat.py`
 
@@ -209,7 +219,10 @@ Styles chat UI:
 
 ---
 
+
+
 ## ✅ Quick Start — Run Locally
+
 
 ### 2️⃣ Create Virtual Environment
 
@@ -257,29 +270,7 @@ Open same URL in another tab to simulate multiple users.
 
 ---
 
-## 🔐 Security & Git (Important)
 
-### Add this in `.gitignore`
-
-```
-.env
-venv/
-__pycache__/
-*.pyc
-client_secret.json
-```
-
-### ⚠ Never commit sensitive data
-
-If secrets were committed:
-
-1. Remove them
-2. Use `git filter-repo` to clean history
-3. Rotate keys
-
-For deployment, use **environment variables** instead of `.env` in production.
-
----
 
 ## 🛠 Common Errors & Fixes
 
